@@ -26,10 +26,10 @@ public static void gerarHtml(int[] prog) throws IOException {
 				"      var options = {\r\n" + 
 				"        chart: {\r\n" + 
 				"          title: 'PA e PG',\r\n" + 
-				"          subtitle: 'Feito por: Thomas 69420'\r\n" + 
+				"          subtitle: 'Feito por: Thomas '\r\n" + 
 				"        },\r\n" + 
-				"        width: 1920,\r\n" + 
-				"        height: 1080\r\n" + 
+				"        width: 500,\r\n" + 
+				"        height: 500,\r\n" + 
 				"      };\r\n" + 
 				"\r\n" + 
 				"      var chart = new google.charts.Line(document.getElementById('linechart_material'));\r\n" + 

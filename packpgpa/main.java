@@ -22,18 +22,13 @@ public class main {
 		System.out.println("digite a quantidade");
 		int qnt=leia.nextInt();
 		leia.nextLine();
-		
-		
-		System.out.println("Tipo de progressao");
-		String tipo=leia.nextLine();
-		
-		
+			
 		System.out.println("Nome do arquivo");
 		String nome=leia.nextLine();
 		
 		pr=new Progressao(qnt,a1,razao,TipoProgressao.PA,nome);
 		
-		System.out.println("Seu Json é uma "+ TipoProgressao.values()+"  :");
+		System.out.println("Seu Json é uma "+ TipoProgressao.PA+"  :");
 		
 		json.gravacao(pr.geraProgressao(),nome);
 	 
@@ -41,13 +36,17 @@ public class main {
 		for (int i = 0; i < pr.getQnt(); i++) {
 			System.out.println(l[i]);
 		}
-		System.out.println(pr.somatoria(nome));
 		try {
 			GeraHTML.gerarHtml(pr.le(nome));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("A media é : "+pr.media(nome)+"\r\n"+" E a mediana: "+pr.mediana());
+		try {
+			GeraHTML.gerarHtml(pr.le("main"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("A somatoria é : "+pr.somatoria(nome)+" \r\n "+" A media é : "+pr.media(nome)+"\r\n"+" E a mediana: "+pr.mediana());
 		
 		
 
