@@ -33,25 +33,23 @@ public class main {
 		
 		pr=new Progressao(qnt,a1,razao,TipoProgressao.PA,nome);
 		
-//		int[] a=pr.geraProgressao();
-//		for (int i =0; i < pr.getQnt(); i++) {
-//			System.out.println(a[i]);
-//			
-//		}
-//	
-		//json.gravacao(pr.geraProgressao(),leia.nextLine());
+		System.out.println("Seu Json é uma "+ TipoProgressao.values()+"  :");
+		
+		json.gravacao(pr.geraProgressao(),nome);
 	 
-		int[] l=pr.le("test");
+		int[] l=pr.le(nome);
 		for (int i = 0; i < pr.getQnt(); i++) {
 			System.out.println(l[i]);
 		}
-		System.out.println(pr.somatoria("test"));
+		System.out.println(pr.somatoria(nome));
 		try {
-			GeraHTML.gerarHtml(pr.le("test"));
+			GeraHTML.gerarHtml(pr.le(nome));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(pr.media("test"));
+		System.out.println("A media é : "+pr.media(nome)+"\r\n"+" E a mediana: "+pr.mediana());
+		
+		
 
 	}
 
